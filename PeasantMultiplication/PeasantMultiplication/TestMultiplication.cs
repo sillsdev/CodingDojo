@@ -25,9 +25,15 @@ namespace PeasantMultiplication
 		}
 
 		[Test]
-		public void NegativeThrows()
+		public void NegativeLThrows()
 		{
 			Assert.Throws<ArgumentOutOfRangeException>(()=>PeasantMul.Mul(-1, 1));
+		}
+
+		[Test]
+		public void NegativeRThrows()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(()=>PeasantMul.Mul(1, -1));
 		}
     }
 }
