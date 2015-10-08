@@ -18,6 +18,11 @@ namespace PeasantMultiplication
 		[TestCase(12,22, Result=12*22)]
 		[TestCase(0,1, Result=0)]
 		[TestCase(3,0, Result=0)]
+		[TestCase(int.MaxValue/2,2,Result=int.MaxValue/2*2)]
+		[TestCase(int.MaxValue, 1, Result = int.MaxValue)]
+		[TestCase(1, int.MaxValue, Result = int.MaxValue)]
+
+		[TestCase(int.MaxValue - 1, 1, Result = int.MaxValue - 1)]
 		[Test]
 		public int Mul(int a, int b)
 		{
@@ -30,6 +35,15 @@ namespace PeasantMultiplication
 		public void NegativeArgThrows(int l, int r)
 		{
 			Assert.Throws<ArgumentOutOfRangeException>(()=>PeasantMul.Mul(l, r));
+		}
+
+		[TestCase(int.MaxValue,2)]
+		[TestCase(2,int.MaxValue)]
+		[TestCase(int.MaxValue,int.MaxValue)]
+		[Test]
+		public void OverflowThrows(int l,int r)
+		{
+			Assert.Throws<OverflowException>(() => PeasantMul.Mul(l,r));
 		}
     }
 }

@@ -1,22 +1,27 @@
 using System;
+using System.Security.AccessControl;
+
 namespace PeasantMultiplication
 {
 	public class PeasantMul
 	{
 		public static int Mul(int l, int r)
 		{
+			long right = r;
 			if (l < 0)
 				throw new ArgumentOutOfRangeException ("l", "Huh?");
-			if (r < 0)
+			if (right < 0)
 				throw new ArgumentOutOfRangeException("r", "Huh?");
-			var result = 0;
+			long result = 0;
 			while (l > 0) {
 				if (IsOdd(l))
-					result += r;
-				r <<= 1;
+				{
+					result += right;
+				}
+				right <<= 1;
 				l >>= 1;
 			}
-			return result;
+			return Convert.ToInt32(result);
 		}
 
 		private static bool IsOdd(int l)
