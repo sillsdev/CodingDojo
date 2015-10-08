@@ -4,7 +4,7 @@ namespace PeasantMultiplication
 	{
 		public static int Mul(int l, int r)
 		{
-			return 1;
+			return r;
 		}
 	}
 }

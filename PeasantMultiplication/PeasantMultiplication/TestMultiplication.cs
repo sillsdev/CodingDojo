@@ -10,12 +10,13 @@ namespace PeasantMultiplication
 	[TestFixture]
     public class TestMultiplication
     {
-		[TestCase(1,1,1)]
-		[TestCase(1,2,2)]
+		[TestCase(1, 1, Result=1)]
+		[TestCase(1, 2, Result=2)]
+		[TestCase(2, 1, Result=2)]
 		[Test]
-		public void Mul1Times1Is1(int a, int b, int result)
+		public int Mul(int a, int b)
 		{
-			Assert.That(PeasantMul.Mul(a,b), Is.EqualTo(result));
+			return PeasantMul.Mul(a, b);
 		}
     }
 }
