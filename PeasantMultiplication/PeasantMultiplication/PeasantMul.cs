@@ -2,9 +2,9 @@ namespace PeasantMultiplication
 {
 	public class PeasantMul
 	{
-		public static int Mul(int i, int i1)
+		public static int Mul(int l, int r)
 		{
-			return 0;
+			return 1;
 		}
 	}
 }
