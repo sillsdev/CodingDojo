@@ -24,16 +24,12 @@ namespace PeasantMultiplication
 			return PeasantMul.Mul(a, b);
 		}
 
+		[TestCase(-1,1)]
+		[TestCase(1, -1)]
 		[Test]
-		public void NegativeLThrows()
+		public void NegativeArgThrows(int l, int r)
 		{
-			Assert.Throws<ArgumentOutOfRangeException>(()=>PeasantMul.Mul(-1, 1));
-		}
-
-		[Test]
-		public void NegativeRThrows()
-		{
-			Assert.Throws<ArgumentOutOfRangeException>(()=>PeasantMul.Mul(1, -1));
+			Assert.Throws<ArgumentOutOfRangeException>(()=>PeasantMul.Mul(l, r));
 		}
     }
 }

@@ -7,6 +7,8 @@ namespace PeasantMultiplication
 		{
 			if (l < 0)
 				throw new ArgumentOutOfRangeException ("l", "Huh?");
+			if (r < 0)
+				throw new ArgumentOutOfRangeException("r", "Huh?");
 			var result = 0;
 			while (l > 0) {
 				if (IsOdd(l))
