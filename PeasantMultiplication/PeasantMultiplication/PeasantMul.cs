@@ -4,7 +4,12 @@ namespace PeasantMultiplication
 	{
 		public static int Mul(int l, int r)
 		{
-			return r;
+			var result = 0;
+			while (l > 0) {
+				result += r;
+				l >>= 1;
+			}
+			return result;
 		}
 	}
 }
